@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <h3 class="text-center my-3">Product List</h3>
+    <div class="row p-2">
+        <div *ngFor="let product of productList" class="col-4 m-0 p-2">
+            <app-card [product]="product"></app-card>
+        </div>
+    </div>
+    <button class="btn btn-primary ml-3" (click)="onAdd()">Add</button>
+</div>

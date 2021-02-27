@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-secondary mb-3">
+                <div class="card-header text-white bg-secondary">Product</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Id:{{product.productId}}</h5>
+                    <p class="card-text">Name:{{product.productName}}</p>
+                    <p class="card-text">Description:{{product.productDescription}}</p>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success mx-3" (click)="onEdit(product.productId)">Edit</button>
+                    <button class="btn btn-danger" (click)="onDelete(product.productId)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

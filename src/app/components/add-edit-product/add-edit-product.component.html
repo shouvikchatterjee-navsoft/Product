@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="text-center my-3">Add Product</h3>
+    <form [formGroup]="productForm">
+        <div class="row">
+            <div class="col-12">
+                <label class="form-label">Product Name</label>
+                <input type="text" [ngClass]="{'is-invalid': productForm.get('productName').touched && productForm.get('productName').errors}" class="form-control" formControlName="productName">
+                <small class="text-danger" *ngIf="productForm.get('productName').touched && productForm.get('productName').errors">Product name is required</small>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-12">
+                <label class="form-label">Product Description</label>
+                <textarea rows="5" [ngClass]="{'is-invalid': productForm.get('productDescription').touched && productForm.get('productDescription').errors}" class="form-control" formControlName="productDescription"></textarea>
+                <small class="text-danger" *ngIf="productForm.get('productDescription').touched && productForm.get('productDescription').errors">Product Description is required</small>
+            </div>
+        </div>
+        <button (click)="onAdd()" *ngIf="!productId" [disabled]="productForm.invalid" type="button" class="btn btn-primary">Add</button>
+        <button (click)="onEdit()" *ngIf="productId" [disabled]="productForm.invalid" type="button" class="btn btn-primary">Update</button>
+        <button (click)="onCancel()" type="button" class="btn btn-primary ml-3">Cancel</button>
+    </form>
+</div>
